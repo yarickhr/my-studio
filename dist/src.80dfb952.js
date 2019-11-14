@@ -35872,7 +35872,154 @@ _defineProperty(Shows, "propTypes", {
 
 var _default = Shows;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js"}],"../routes/Promocode/Promocode.jsx":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js"}],"../components/Icons/PlusIcon.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function PlusIcon(_ref) {
+  var _ref$width = _ref.width,
+      width = _ref$width === void 0 ? '16' : _ref$width;
+  return _react.default.createElement("svg", {
+    width: width,
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 1000 1000"
+  }, _react.default.createElement("path", {
+    d: "M494.6 990h-.9c-44.7-.6-80.5-43.5-79.9-95.7l3.9-303.1-314.2-4c-24.4-.3-47.4-8.5-64.9-23-18.5-15.4-29-37-28.7-59.2.6-44.8 41.9-79.9 94.2-79.9l315.6 4 4.2-325.6C424.7 52 461.2 10 505.3 10c23.1.3 44.4 11.3 59.4 30.2 14.1 17.8 21.6 41.1 21.4 65.5L582 431.2l314.4 4c52.1.7 94.1 37.6 93.6 82.3-.6 44.9-42 79.9-94.3 79.9l-315.8-4-3.9 303c-.7 51.6-37.2 93.6-81.4 93.6zM105 470c-27.3 0-49.9 16.3-50.1 35.5-.2 11.9 7.8 20.3 12.5 24.3 9.4 7.8 22.8 12.4 36.6 12.6l336.7 4.3c5.9.1 11.6 2.5 15.8 6.8 4.1 4.3 6.5 10 6.4 15.9l-4.2 325.5c-.3 26.9 15.9 49.9 35.6 50.2l.3 22.5v-22.5c19.4 0 36.1-22.5 36.5-49.3l4.2-325.5c.2-12.3 10.2-22.2 22.5-22.2h.3l336.8 4.3c27.8 0 49.9-15.9 50.2-35.6.2-19.6-22.3-36.4-49.3-36.8l-336.9-4.3c-5.9-.1-11.6-2.5-15.8-6.8-4.1-4.3-6.5-10-6.4-15.9l4.5-348c.2-13.9-4.1-27.4-11.7-37-3.8-4.9-12-13-23.9-13.2-19.7 0-36.5 22.5-36.8 49.2l-4.5 348c-.2 12.3-10.2 22.2-22.5 22.2h-.3L105 470z"
+  }));
+}
+
+var _default = PlusIcon;
+exports.default = _default;
+},{"react":"../../node_modules/react/index.js"}],"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../routes/Promocodes/PromocodeItem/PromocodeItem.less":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../routes/Promocodes/PromocodeItem/PromocodeItem.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+require("./PromocodeItem.less");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PromocodeItem = function PromocodeItem(_ref) {
+  var name = _ref.name,
+      link = _ref.link,
+      subscriptionsCount = _ref.subscriptionsCount,
+      videoSrc = _ref.videoSrc,
+      disabled = _ref.disabled;
+  return _react.default.createElement("div", {
+    className: "promocode-item"
+  }, _react.default.createElement("div", {
+    className: "promocode-item__title"
+  }, _react.default.createElement("div", {
+    className: "promocode-item__circle"
+  }), _react.default.createElement("span", null, name)), _react.default.createElement("a", {
+    href: link
+  }, link), _react.default.createElement("button", null, "COPY"), _react.default.createElement("span", {
+    className: "promocode-item__status"
+  }, disabled ? 'Inactive' : 'Active'), _react.default.createElement("span", null, subscriptionsCount, " subscriptions"));
+};
+
+PromocodeItem.propTypes = {
+  name: _propTypes.default.string,
+  link: _propTypes.default.string,
+  subscriptionsCount: _propTypes.default.number,
+  videoSrc: _propTypes.default.string,
+  disabled: _propTypes.default.bool
+};
+var _default = PromocodeItem;
+exports.default = _default;
+},{"react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","./PromocodeItem.less":"../routes/Promocodes/PromocodeItem/PromocodeItem.less"}],"../routes/Promocodes/Promocodes.less":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../routes/Promocodes/Promocodes.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35884,54 +36031,62 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
+var _PlusIcon = _interopRequireDefault(require("../../components/Icons/PlusIcon.jsx"));
+
+var _PromocodeItem = _interopRequireDefault(require("./PromocodeItem/PromocodeItem.jsx"));
+
+require("./Promocodes.less");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+var PROMOCODES = [{
+  name: 'PROMO',
+  link: 'example.com',
+  subscriptionsCount: 3434142,
+  videoSrc: 'example.com'
+}, {
+  name: 'PROMO',
+  link: 'example.com',
+  subscriptionsCount: 3434142,
+  videoSrc: 'example.com',
+  disabled: true
+}, {
+  name: 'PROMO',
+  link: 'example.com',
+  subscriptionsCount: 3434142,
+  videoSrc: 'example.com'
+}, {
+  name: 'PROMO',
+  link: 'example.com',
+  subscriptionsCount: 3434142,
+  videoSrc: 'example.com'
+}, {
+  name: 'PROMO',
+  link: 'example.com',
+  subscriptionsCount: 3434142,
+  videoSrc: 'example.com',
+  disabled: true
+}];
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var Promocodes = function Promocodes() {
+  return _react.default.createElement("div", {
+    className: "promocodes"
+  }, _react.default.createElement("h1", {
+    className: "promocodes__title"
+  }, "Promocodes"), _react.default.createElement("button", {
+    className: "promocodes__add-button"
+  }, _react.default.createElement(_PlusIcon.default, null)), PROMOCODES.map(function (params) {
+    return _react.default.createElement(_PromocodeItem.default, params);
+  }));
+};
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var Promocode =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Promocode, _Component);
-
-  function Promocode() {
-    _classCallCheck(this, Promocode);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Promocode).apply(this, arguments));
-  }
-
-  _createClass(Promocode, [{
-    key: "render",
-    value: function render() {
-      return _react.default.createElement("div", null, "Promocode content");
-    }
-  }]);
-
-  return Promocode;
-}(_react.Component);
-
-var _default = Promocode;
+var _default = Promocodes;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js"}],"../routes/Campaigns/Campaigns.jsx":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","../../components/Icons/PlusIcon.jsx":"../components/Icons/PlusIcon.jsx","./PromocodeItem/PromocodeItem.jsx":"../routes/Promocodes/PromocodeItem/PromocodeItem.jsx","./Promocodes.less":"../routes/Promocodes/Promocodes.less"}],"../routes/Campaigns/Campaigns.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36013,74 +36168,7 @@ function Pulse(_ref) {
 
 var _default = Pulse;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js"}],"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../components/Logo/Logo.less":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js"}],"../components/Logo/Logo.less":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -36186,12 +36274,165 @@ function PromocodeIcon(_ref) {
 
 var _default = PromocodeIcon;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js"}],"../components/SidebarMenu/SidebarMenuLink/SidebarMenuLink.less":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js"}],"../components/EditableMenu/EditableMenu.less":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/SidebarMenu/SidebarMenuLink/SidebarMenuLink.jsx":[function(require,module,exports) {
+},{"_css_loader":"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/EditableMenu/EditableMenu.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _PlusIcon = _interopRequireDefault(require("../Icons/PlusIcon.jsx"));
+
+require("./EditableMenu.less");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var EditableMenu =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(EditableMenu, _Component);
+
+  function EditableMenu() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, EditableMenu);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(EditableMenu)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      menu: _this.props.menu || [],
+      showInputField: false,
+      value: ''
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "toggleShowInpup", function () {
+      _this.setState(function (prevSate) {
+        return {
+          showInputField: !prevSate.showInputField
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "changeInputValue", function (e) {
+      _this.setState({
+        value: e.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleKeyDown", function (e) {
+      var _this$state = _this.state,
+          value = _this$state.value,
+          menu = _this$state.menu;
+
+      if (e.keyCode == 13) {
+        _this.setState(function (_ref) {
+          var menu = _ref.menu;
+          return {
+            menu: [].concat(_toConsumableArray(menu), [value]),
+            value: ''
+          };
+        });
+      }
+    });
+
+    return _this;
+  }
+
+  _createClass(EditableMenu, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          path = _this$props.path,
+          title = _this$props.title,
+          icon = _this$props.icon,
+          _this$state2 = this.state,
+          menu = _this$state2.menu,
+          showInputField = _this$state2.showInputField,
+          value = _this$state2.value;
+      return _react.default.createElement("div", {
+        className: "editable-menu"
+      }, _react.default.createElement("div", {
+        className: "editable-menu__title"
+      }, icon, _react.default.createElement("span", {
+        className: "editable-menu__title-text"
+      }, title), _react.default.createElement("button", {
+        onClick: this.toggleShowInpup,
+        className: "editable-menu__button ".concat(showInputField && 'editable-menu__button--cross')
+      }, _react.default.createElement(_PlusIcon.default, null))), showInputField && _react.default.createElement("input", {
+        onKeyDown: this.handleKeyDown,
+        className: "editable-menu__input",
+        value: value,
+        onChange: this.changeInputValue
+      }), _react.default.createElement("ul", null, menu.map(function (title) {
+        return _react.default.createElement("li", {
+          className: "editable-menu__item",
+          key: title
+        }, _react.default.createElement(_reactRouterDom.Link, {
+          to: "".concat(path, "/").concat(title)
+        }, title));
+      })));
+    }
+  }]);
+
+  return EditableMenu;
+}(_react.Component);
+
+var _default = EditableMenu;
+exports.default = _default;
+},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","../Icons/PlusIcon.jsx":"../components/Icons/PlusIcon.jsx","./EditableMenu.less":"../components/EditableMenu/EditableMenu.less"}],"../components/SidebarMenu/SidebarMenuItem/SidebarMenuItem.less":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/SidebarMenu/SidebarMenuItem/SidebarMenuItem.jsx":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36203,29 +36444,38 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
-require("./SidebarMenuLink.less");
+var _EditableMenu = _interopRequireDefault(require("../../EditableMenu/EditableMenu.jsx"));
+
+require("./SidebarMenuItem.less");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var SidebarMenuLink = function SidebarMenuLink(_ref) {
+var SidebarMenuItem = function SidebarMenuItem(_ref) {
   var title = _ref.title,
       path = _ref.path,
       icon = _ref.icon,
+      editableSubmenu = _ref.editableSubmenu,
       mixCls = _ref.mixCls,
       active = _ref.active;
   return _react.default.createElement("li", {
-    className: "link ".concat(active && 'link--active', " ").concat(mixCls),
+    className: "menu-item ".concat(mixCls ? mixCls : ''),
     key: title
-  }, _react.default.createElement(_reactRouterDom.Link, {
+  }, Array.isArray(editableSubmenu) && editableSubmenu.length ? _react.default.createElement(_EditableMenu.default, {
+    icon: icon,
+    title: title,
+    path: path,
+    menu: editableSubmenu
+  }) : _react.default.createElement(_reactRouterDom.Link, {
+    className: "menu-item__title ".concat(active ? 'menu-item__title--active' : ''),
     to: path
   }, icon, _react.default.createElement("span", {
-    className: "link-title"
+    className: "menu-item__title-text"
   }, title)));
 };
 
-var _default = SidebarMenuLink;
+var _default = SidebarMenuItem;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","./SidebarMenuLink.less":"../components/SidebarMenu/SidebarMenuLink/SidebarMenuLink.less"}],"../components/SidebarMenu/SidebarMenu.less":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","../../EditableMenu/EditableMenu.jsx":"../components/EditableMenu/EditableMenu.jsx","./SidebarMenuItem.less":"../components/SidebarMenu/SidebarMenuItem/SidebarMenuItem.less"}],"../components/SidebarMenu/SidebarMenu.less":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -36248,7 +36498,7 @@ var _Logo = _interopRequireDefault(require("../Logo/Logo.jsx"));
 
 var _PromocodeIcon = _interopRequireDefault(require("../Icons/PromocodeIcon.jsx"));
 
-var _SidebarMenuLink = _interopRequireDefault(require("./SidebarMenuLink/SidebarMenuLink.jsx"));
+var _SidebarMenuItem = _interopRequireDefault(require("./SidebarMenuItem/SidebarMenuItem.jsx"));
 
 require("./SidebarMenu.less");
 
@@ -36300,15 +36550,13 @@ function (_Component) {
     value: function render() {
       var _this$props = this.props,
           menu = _this$props.menu,
-          match = _this$props.match,
-          pathname = _this$props.location.pathname,
-          history = _this$props.history;
-      console.log(location);
+          pathname = _this$props.location.pathname;
+      console.log(menu);
       return _react.default.createElement("div", {
         className: "sidebar-menu"
       }, _react.default.createElement("nav", null, _react.default.createElement(_Logo.default, null), _react.default.createElement("ul", {
         className: "sidebar-menu__list"
-      }, _react.default.createElement(_SidebarMenuLink.default, {
+      }, _react.default.createElement(_SidebarMenuItem.default, {
         mixCls: "sidebar-menu__border",
         active: pathname === '/',
         title: "dashboard",
@@ -36318,7 +36566,8 @@ function (_Component) {
         var path = _ref.path,
             rest = _objectWithoutProperties(_ref, ["path"]);
 
-        return _react.default.createElement(_SidebarMenuLink.default, _extends({
+        return _react.default.createElement(_SidebarMenuItem.default, _extends({
+          key: path,
           active: path === pathname,
           path: path
         }, rest));
@@ -36340,7 +36589,40 @@ _defineProperty(SidebarMenu, "propTypes", {
 var _default = (0, _reactRouter.withRouter)(SidebarMenu);
 
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","react-router":"../../node_modules/react-router/esm/react-router.js","../Logo/Logo.jsx":"../components/Logo/Logo.jsx","../Icons/PromocodeIcon.jsx":"../components/Icons/PromocodeIcon.jsx","./SidebarMenuLink/SidebarMenuLink.jsx":"../components/SidebarMenu/SidebarMenuLink/SidebarMenuLink.jsx","./SidebarMenu.less":"../components/SidebarMenu/SidebarMenu.less"}],"../routes/App.less":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","prop-types":"../../node_modules/prop-types/index.js","react-router":"../../node_modules/react-router/esm/react-router.js","../Logo/Logo.jsx":"../components/Logo/Logo.jsx","../Icons/PromocodeIcon.jsx":"../components/Icons/PromocodeIcon.jsx","./SidebarMenuItem/SidebarMenuItem.jsx":"../components/SidebarMenu/SidebarMenuItem/SidebarMenuItem.jsx","./SidebarMenu.less":"../components/SidebarMenu/SidebarMenu.less"}],"../layouts/HeaderLayout/HeaderLayout.less":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../../../.nvm/versions/node/v8.9.1/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../layouts/HeaderLayout/HeaderLayout.jsx":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+require("./HeaderLayout.less");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var HeaderLayout = function HeaderLayout(_ref) {
+  var children = _ref.children;
+  return _react.default.createElement("div", {
+    className: "header-layout"
+  }, _react.default.createElement("div", {
+    className: "header-layout__header"
+  }, _react.default.createElement("input", {
+    placeholder: "Search videos, shows and people",
+    className: "header-layout__header-input"
+  })), children);
+};
+
+var _default = HeaderLayout;
+exports.default = _default;
+},{"react":"../../node_modules/react/index.js","./HeaderLayout.less":"../layouts/HeaderLayout/HeaderLayout.less"}],"../routes/App.less":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -36361,13 +36643,15 @@ var _Videos = _interopRequireDefault(require("./Videos/Videos.jsx"));
 
 var _Shows = _interopRequireDefault(require("./Shows/Shows.jsx"));
 
-var _Promocode = _interopRequireDefault(require("./Promocode/Promocode.jsx"));
+var _Promocodes = _interopRequireDefault(require("./Promocodes/Promocodes.jsx"));
 
 var _Campaigns = _interopRequireDefault(require("./Campaigns/Campaigns.jsx"));
 
 var _SidebarMenu = _interopRequireDefault(require("../components/SidebarMenu/SidebarMenu.jsx"));
 
 var _PromocodeIcon = _interopRequireDefault(require("../components/Icons/PromocodeIcon.jsx"));
+
+var _HeaderLayout = _interopRequireDefault(require("../layouts/HeaderLayout/HeaderLayout.jsx"));
 
 require("./App.less");
 
@@ -36395,7 +36679,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var routes = [{
+var ROUTES = [{
   title: 'Videos',
   path: '/videos',
   icon: _react.default.createElement(_PromocodeIcon.default, null),
@@ -36404,12 +36688,13 @@ var routes = [{
   title: 'Shows',
   path: '/shows',
   icon: _react.default.createElement(_PromocodeIcon.default, null),
-  page: _react.default.createElement(_Shows.default, null)
+  page: _react.default.createElement(_Shows.default, null),
+  editableSubmenu: ['Nike Air Max', 'Nike Sport']
 }, {
   title: 'Promocode',
   path: '/promocode',
   icon: _react.default.createElement(_PromocodeIcon.default, null),
-  page: _react.default.createElement(_Promocode.default, null)
+  page: _react.default.createElement(_Promocodes.default, null)
 }, {
   title: 'Campaigns',
   path: '/campaigns',
@@ -36431,18 +36716,17 @@ function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      console.log(this.props);
       return _react.default.createElement("div", {
         className: "app"
       }, _react.default.createElement(_SidebarMenu.default, {
-        menu: routes
-      }), _react.default.createElement(_reactRouterDom.Switch, null, routes.map(function (_ref) {
+        menu: ROUTES
+      }), _react.default.createElement(_reactRouterDom.Switch, null, ROUTES.map(function (_ref) {
         var path = _ref.path,
             page = _ref.page;
         return _react.default.createElement(_reactRouterDom.Route, {
           key: path,
           path: path
-        }, page);
+        }, _react.default.createElement(_HeaderLayout.default, null, page));
       }), _react.default.createElement(_reactRouterDom.Route, {
         key: "404",
         path: "*"
@@ -36455,7 +36739,7 @@ function (_Component) {
 
 var _default = App;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","./Videos/Videos.jsx":"../routes/Videos/Videos.jsx","./Shows/Shows.jsx":"../routes/Shows/Shows.jsx","./Promocode/Promocode.jsx":"../routes/Promocode/Promocode.jsx","./Campaigns/Campaigns.jsx":"../routes/Campaigns/Campaigns.jsx","../components/SidebarMenu/SidebarMenu.jsx":"../components/SidebarMenu/SidebarMenu.jsx","../components/Icons/PromocodeIcon.jsx":"../components/Icons/PromocodeIcon.jsx","./App.less":"../routes/App.less"}],"../index.js":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","./Videos/Videos.jsx":"../routes/Videos/Videos.jsx","./Shows/Shows.jsx":"../routes/Shows/Shows.jsx","./Promocodes/Promocodes.jsx":"../routes/Promocodes/Promocodes.jsx","./Campaigns/Campaigns.jsx":"../routes/Campaigns/Campaigns.jsx","../components/SidebarMenu/SidebarMenu.jsx":"../components/SidebarMenu/SidebarMenu.jsx","../components/Icons/PromocodeIcon.jsx":"../components/Icons/PromocodeIcon.jsx","../layouts/HeaderLayout/HeaderLayout.jsx":"../layouts/HeaderLayout/HeaderLayout.jsx","./App.less":"../routes/App.less"}],"../index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -36506,7 +36790,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61505" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51943" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

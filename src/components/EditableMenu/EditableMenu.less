@@ -1,0 +1,104 @@
+.editable-menu {
+    display: block;
+
+    width: 100%;
+
+    ul {
+        list-style: none;
+    }
+
+    &__item {
+
+        margin: 16px 0;
+
+        &::before {
+            content: "\2022";
+            color: #817c99;
+            font-weight: bold;
+            display: inline-block;
+            width: 2em;
+            margin-left: -1em;
+        }
+
+        &:hover {
+            &::before {
+                color: #2e9d71;
+            }
+        }
+
+        a {
+            text-decoration: none;
+
+            color: #817c99;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+
+        color: currentColor;
+
+        text-transform: uppercase;
+
+        text-decoration: none;
+
+        &--active {
+            color: #fff;
+        }
+
+        path {
+            fill: currentColor;
+        }
+
+        &:hover {
+            color: #41c4d6;
+    
+            path {
+                fill: currentColor;
+            }
+        }
+
+        &-text {
+            margin-left: 8px;
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 24px;
+        height: 24px;
+
+        margin: 0 15px 0 auto;
+
+        border-radius: 50%;
+        padding: 0;
+
+        background: #817c99;
+        border: none;
+
+        cursor: pointer;
+
+        outline: none;
+
+        transition: transform .5s ease;
+
+        &--cross
+        {
+            transform: rotate(45deg);
+        }
+    }
+
+    &__input {
+        margin: 8px 0;
+        padding: 8px;
+        width: 100%;
+
+        border-radius: 20px;
+
+        outline: none;
+    }
+}

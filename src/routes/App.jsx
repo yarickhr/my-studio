@@ -3,14 +3,16 @@ import {Switch, Route} from 'react-router-dom';
 
 import Videos from './Videos/Videos.jsx';
 import Shows from './Shows/Shows.jsx';
-import Promocode from './Promocode/Promocode.jsx';
+import Promocodes from './Promocodes/Promocodes.jsx';
 import Campaigns from './Campaigns/Campaigns.jsx';
 import SidebarMenu from '../components/SidebarMenu/SidebarMenu.jsx';
 import PromocodeIcon from '../components/Icons/PromocodeIcon.jsx';
 
+import HeaderLayout from '../layouts/HeaderLayout/HeaderLayout.jsx';
+
 import './App.less';
 
-const routes = [
+const ROUTES = [
     {
         title: 'Videos',
         path: '/videos',
@@ -21,13 +23,14 @@ const routes = [
         title: 'Shows',
         path: '/shows',
         icon: <PromocodeIcon/>,
-        page:  <Shows/>
+        page:  <Shows/>,
+        editableSubmenu: ['Nike Air Max', 'Nike Sport']
     },
     {
         title: 'Promocode',
         path: '/promocode',
         icon: <PromocodeIcon/>,
-        page:  <Promocode/>,
+        page:  <Promocodes/>,
     },
     {
         title: 'Campaigns',
@@ -39,16 +42,17 @@ const routes = [
 
 class App extends Component {
     render() {
-        console.log(this.props);
         return (
             <div className='app'>
-                <SidebarMenu menu={routes}/>
+                <SidebarMenu menu={ROUTES}/>
                 <Switch>
-                    {routes.map(({path, page}) => (
+                    {ROUTES.map(({path, page}) => (
                         <Route 
                             key={path}
                             path={path}>
-                            {page}
+                            <HeaderLayout>
+                                {page}
+                            </HeaderLayout>
                         </Route>
                     ))}
                     <Route

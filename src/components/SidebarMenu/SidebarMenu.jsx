@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from "react-router";
 import Logo from '../Logo/Logo.jsx';
 import PromocodeIcon from '../Icons/PromocodeIcon.jsx';
-import SidebarMenuLink from './SidebarMenuLink/SidebarMenuLink.jsx';
+import SidebarMenuItem from './SidebarMenuItem/SidebarMenuItem.jsx';
 
 import './SidebarMenu.less';
 
@@ -19,24 +19,25 @@ class SidebarMenu extends Component {
     }
 
     render() {
-        const {menu, match, location: {pathname}, history} = this.props;
+        const {menu, location: {pathname}} = this.props;
 
-        console.log(location);
+        console.log(menu);
 
         return (
             <div className='sidebar-menu'>
                 <nav>
                     <Logo/>
                     <ul className='sidebar-menu__list'>
-                        <SidebarMenuLink 
+                        <SidebarMenuItem
                             mixCls='sidebar-menu__border'
                             active={pathname === '/'}
                             title='dashboard'
                             path='/'
                             icon={<PromocodeIcon/>}/>
-                       {
-                           menu.map(({path, ...rest}) => (
-                                <SidebarMenuLink
+                        {
+                            menu.map(({path, ...rest}) => (
+                                <SidebarMenuItem
+                                    key={path}
                                     active={path === pathname}
                                     path={path}
                                     {...rest}/>
