@@ -2,4 +2,6 @@ node_modules/
 build/
 vscode/
 .idea/
+dist/
+.cache/
 yarn-error.log

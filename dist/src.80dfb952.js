@@ -36043,29 +36043,31 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
 var PROMOCODES = [{
-  name: 'PROMO',
+  name: 'PROMO1',
   link: 'example.com',
   subscriptionsCount: 3434142,
   videoSrc: 'example.com'
 }, {
-  name: 'PROMO',
+  name: 'PROMO2',
   link: 'example.com',
   subscriptionsCount: 3434142,
   videoSrc: 'example.com',
   disabled: true
 }, {
-  name: 'PROMO',
+  name: 'PROMO3',
   link: 'example.com',
   subscriptionsCount: 3434142,
   videoSrc: 'example.com'
 }, {
-  name: 'PROMO',
+  name: 'PROMO4',
   link: 'example.com',
   subscriptionsCount: 3434142,
   videoSrc: 'example.com'
 }, {
-  name: 'PROMO',
+  name: 'PROMO5',
   link: 'example.com',
   subscriptionsCount: 3434142,
   videoSrc: 'example.com',
@@ -36079,8 +36081,12 @@ var Promocodes = function Promocodes() {
     className: "promocodes__title"
   }, "Promocodes"), _react.default.createElement("button", {
     className: "promocodes__add-button"
-  }, _react.default.createElement(_PlusIcon.default, null)), PROMOCODES.map(function (params) {
-    return _react.default.createElement(_PromocodeItem.default, params);
+  }, _react.default.createElement(_PlusIcon.default, null)), PROMOCODES.sort(function (a, b) {
+    return !!a.disabled - !!b.disabled;
+  }).map(function (params) {
+    return _react.default.createElement(_PromocodeItem.default, _extends({
+      key: params.name
+    }, params));
   }));
 };
 
@@ -36551,7 +36557,6 @@ function (_Component) {
       var _this$props = this.props,
           menu = _this$props.menu,
           pathname = _this$props.location.pathname;
-      console.log(menu);
       return _react.default.createElement("div", {
         className: "sidebar-menu"
       }, _react.default.createElement("nav", null, _react.default.createElement(_Logo.default, null), _react.default.createElement("ul", {
@@ -36790,7 +36795,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51943" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55964" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

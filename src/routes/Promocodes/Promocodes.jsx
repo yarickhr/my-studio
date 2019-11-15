@@ -7,32 +7,32 @@ import './Promocodes.less';
 
 const PROMOCODES = [
     {
-        name: 'PROMO',
+        name: 'PROMO1',
         link: 'example.com',
         subscriptionsCount: 3434142,
         videoSrc: 'example.com'
     },
     {
-        name: 'PROMO',
+        name: 'PROMO2',
         link: 'example.com',
         subscriptionsCount: 3434142,
         videoSrc: 'example.com',
         disabled: true
     },
     {
-        name: 'PROMO',
+        name: 'PROMO3',
         link: 'example.com',
         subscriptionsCount: 3434142,
         videoSrc: 'example.com'
     },
     {
-        name: 'PROMO',
+        name: 'PROMO4',
         link: 'example.com',
         subscriptionsCount: 3434142,
         videoSrc: 'example.com'
     },
     {
-        name: 'PROMO',
+        name: 'PROMO5',
         link: 'example.com',
         subscriptionsCount: 3434142,
         videoSrc: 'example.com',
@@ -46,8 +46,17 @@ const Promocodes = () => (
         <button className='promocodes__add-button'>
             <PlusIcon/>
         </button>
-        {PROMOCODES.map(params => <PromocodeItem {...params}/>)}
+            {
+                PROMOCODES
+                    .sort((a, b) => !!a.disabled - !!b.disabled)
+                    .map(params => (
+                        <PromocodeItem
+                            key={params.name} 
+                            {...params}/>
+                        )
+                    )
+            }
     </div>
-)
+);
 
 export default Promocodes;

@@ -21,8 +21,6 @@ class SidebarMenu extends Component {
     render() {
         const {menu, location: {pathname}} = this.props;
 
-        console.log(menu);
-
         return (
             <div className='sidebar-menu'>
                 <nav>
