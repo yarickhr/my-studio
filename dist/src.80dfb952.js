@@ -57223,7 +57223,7 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  position: sticky;\n  align-items: center;\n  padding: 1rem;\n  border: 1px solid #363636;\n  background: #424242;\n\n  color: #fff;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  align-items: center;\n  padding: 1rem;\n  background: transparent;\n\n  z-index: 9;\n\n  color: #fff;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -57241,6 +57241,7 @@ var useStyles = (0, _styles.makeStyles)({
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     borderRadius: 3,
     border: 0,
+    top: 50,
     color: '#fff',
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)'
@@ -57254,11 +57255,14 @@ var MENU = [{
   id: 'about',
   title: 'Про нас',
   items: [{
+    title: 'Хто ми',
+    link: '/about'
+  }, {
     title: 'Віровчення',
     link: '/about'
   }, {
-    title: 'Розклад служінь',
-    link: '/'
+    title: 'Історія церкви',
+    link: '/about'
   }, {
     title: 'Контакти',
     link: '/'
@@ -57267,17 +57271,36 @@ var MENU = [{
   id: 'camp',
   title: 'Табори',
   items: [{
-    title: 'Розклад таборів',
+    title: 'Наші табори',
     link: '/'
   }, {
-    title: 'Про табори',
+    title: 'Розклад таборів',
     link: '/'
   }]
 }, {
   id: 'worship',
-  title: 'Служіння',
+  title: 'Церковне життя',
   items: [{
-    title: 'Записи служінь',
+    title: 'Підлітковий клуб',
+    link: '/'
+  }, {
+    title: 'Молодіжні зустрічі',
+    link: '/'
+  }, {
+    title: 'Дитячий клуб AWANA',
+    link: '/'
+  }, {
+    title: 'Недільна школа',
+    link: '/'
+  }]
+}, {
+  id: 'media',
+  title: 'Медіа',
+  items: [{
+    title: 'Відеозаписи служінь',
+    link: '/'
+  }, {
+    title: 'Галерея',
     link: '/'
   }]
 }];
@@ -63292,7 +63315,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    height: 400px;\n\n    .church-gallery\n    {\n        height: 100%;\n\n        .image-gallery-content,\n        .image-gallery-slide-wrapper,\n        .image-gallery-swipe,\n        .image-gallery-slides,\n        .image-gallery-slide\n        {\n            height: 100%;\n        }\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n\n    height: 80vh;\n\n    .church-gallery\n    {\n        height: 100%;\n\n        .image-gallery-content,\n        .image-gallery-slide-wrapper,\n        .image-gallery-swipe,\n        .image-gallery-slides,\n        .image-gallery-slide\n        {\n            height: 100%;\n        }\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -63322,7 +63345,7 @@ var HomePage = function HomePage() {
     showBullets: true,
     autoPlay: true,
     additionalClass: "church-gallery",
-    slideInterval: 2000,
+    slideInterval: 3000,
     showPlayButton: false,
     showThumbnails: false,
     showFullscreenButton: false,
@@ -63383,7 +63406,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49330" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54838" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

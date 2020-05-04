@@ -9,11 +9,16 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 const NavBar = styled.nav`
   display: flex;
-  position: sticky;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   align-items: center;
   padding: 1rem;
-  border: 1px solid #363636;
-  background: #424242;
+  background: transparent;
+
+  z-index: 9;
 
   color: #fff;
 `;
@@ -23,6 +28,7 @@ const useStyles = makeStyles({
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
     borderRadius: 3,
     border: 0,
+    top: 50,
     color: '#fff',
     padding: '0 30px',
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
@@ -39,12 +45,16 @@ const MENU = [
         title: 'Про нас',
         items: [
           {
+            title: 'Хто ми',
+            link: '/about'
+          },
+          {
               title: 'Віровчення',
               link: '/about'
           },
           {
-              title: 'Розклад служінь',
-              link: '/'
+            title: 'Історія церкви',
+            link: '/about'
           },
           {
               title: 'Контакти',
@@ -57,25 +67,51 @@ const MENU = [
         title: 'Табори',
         items: [
           {
-            title: 'Розклад таборів',
+            title: 'Наші табори',
             link: '/'
           },
           {
-            title: 'Про табори',
+            title: 'Розклад таборів',
             link: '/'
           }
         ]
     },
     {
         id: 'worship',
-        title: 'Служіння',
+        title: 'Церковне життя',
         items: [
           {
-            title: 'Записи служінь',
+            title: 'Підлітковий клуб',
             link: '/'
-          }
+          },
+          {
+            title: 'Молодіжні зустрічі',
+            link: '/'
+          },
+          {
+            title: 'Дитячий клуб AWANA',
+            link: '/'
+          },
+          {
+            title: 'Недільна школа',
+            link: '/'
+          },
         ]
-    }
+    },
+    {
+      id: 'media',
+      title: 'Медіа',
+      items: [
+        {
+          title: 'Відеозаписи служінь',
+          link: '/'
+        },
+        {
+          title: 'Галерея',
+          link: '/'
+        }
+      ]
+  },
 ]
 
 
@@ -99,7 +135,7 @@ const Header = props => {
           {
               MENU.map(({id, title, items}) => (
                 <React.Fragment key={id}>
-                  <Button 
+                  <Button
                     aria-controls="simple-menu" 
                     aria-haspopup="true" 
                     onClick={handleClick(id)}>

@@ -4,7 +4,8 @@ import ImageGallery from 'react-image-gallery';
 import styled from 'styled-components';
 
 const GalleryWrapper = styled.div`
-    height: 400px;
+
+    height: 80vh;
 
     .church-gallery
     {
@@ -46,7 +47,7 @@ const HomePage = () => (
               showBullets
               autoPlay
               additionalClass='church-gallery'
-              slideInterval={2000}
+              slideInterval={3000}
               showPlayButton={false}
               showThumbnails={false}
               showFullscreenButton={false}
