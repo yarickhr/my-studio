@@ -1,1 +1,1 @@
-{"version":3,"sources":["../routes/App.less"],"names":[],"mappings":"AAAA;EACI,aAAa,oBAAb;EACA,gBAAA;EACA,sBAAA","file":"src.80dfb952.css","sourceRoot":"../src/static","sourcesContent":[".app {\n    font-family: 'Comfortaa', cursive;\n    font-weight: 400;\n    letter-spacing: .1rem;\n}"]}
+{"version":3,"sources":["../routes/routes/HomePage/HomePage.less"],"names":[],"mappings":"QAAQ","file":"src.80dfb952.css","sourceRoot":"../src/static","sourcesContent":["@import '~react-image-gallery/styles/css/image-gallery.css';"]}

@@ -1,8 +1,4 @@
-.app {
-  font-family: 'Comfortaa', cursive;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-}
+@import '~react-image-gallery/styles/css/image-gallery.css';
 
 
 /*# sourceMappingURL=/src.80dfb952.css.map */

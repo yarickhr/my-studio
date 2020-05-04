@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
-import HomePage from './HomePage';
+import HomePage from './HomePage/HomePage.jsx';
 
 import './App.less';
 

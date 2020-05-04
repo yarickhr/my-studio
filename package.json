@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel -p 7777 src/static/index.html",
+    "dev": "parcel -p 3333 src/static/index.html",
     "build": "parcel build src/static/index.html"
   },
   "author": "",
@@ -25,7 +25,9 @@
     "@types/react": "^16.8.6",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
+    "react-image-gallery": "^1.0.7",
     "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2"
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^5.1.0"
   }
 }
