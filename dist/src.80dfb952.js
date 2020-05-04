@@ -57222,8 +57222,18 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n  a\n  {\n    text-decoration: none;\n    color: #fff;\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  align-items: center;\n  padding: 1rem;\n  background: transparent;\n\n  z-index: 9;\n\n  color: #fff;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: flex-end;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  align-items: center;\n  padding: 1rem;\n  background: transparent;\n\n  z-index: 9;\n\n  color: #fff;\n\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -57236,18 +57246,18 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var NavBar = _styledComponents.default.nav(_templateObject());
 
+var NavItem = _styledComponents.default.div(_templateObject2());
+
 var useStyles = (0, _styles.makeStyles)({
   paper: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    borderRadius: 3,
+    background: '#363636',
+    borderRadius: 5,
     border: 0,
-    top: 50,
     color: '#fff',
     padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)'
+    boxShadow: '0 3px 5px 2px rgba(54, 54, 54, .3)'
   },
   list: {
-    textTransform: 'capitalize',
     color: '#fff'
   }
 });
@@ -57354,9 +57364,10 @@ var Header = function Header(props) {
           title = _ref2.title;
       return _react.default.createElement(_MenuItem.default, {
         key: title
-      }, _react.default.createElement(_reactRouterDom.NavLink, {
+      }, _react.default.createElement(NavItem, null, _react.default.createElement(_reactRouterDom.Link, {
+        className: "link",
         to: link
-      }, title));
+      }, title)));
     })));
   }));
 };
@@ -63406,7 +63417,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54838" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63221" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
